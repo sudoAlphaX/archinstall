@@ -17,9 +17,12 @@ paru -S catppuccin-gtk-theme-mocha papirus-folders-catppuccin-git
 papirus-folders -C cat-mocha-mauve
 gsettings set org.gnome.desktop.interface gtk-theme "catppuccin-mocha-mauve-standard+default-dark" && gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' && gsettings set org.gnome.desktop.interface icon-theme Papirus
 
+paru -S auto-cpufreq
+
 * Setup fancontrol
 
-sudo systemctl enable fancontrol.service reflector.timer reflector.service pkgfile-update.timer bluetooth.service avahi-daemon.service avahi-dnsconfd.service
+sudo systemctl enable fancontrol.service reflector.timer reflector.service pkgfile-update.timer bluetooth.service avahi-daemon.service avahi-dnsconfd.service auto-cpufreq
+sudo systemctl mask power-profiles-daemon.service
 
 * Catppuccin grub
 
