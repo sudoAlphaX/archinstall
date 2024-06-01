@@ -30,6 +30,8 @@ sudo systemctl enable reflector.timer
 sudo systemctl enable reflector.service
 sudo systemctl enable pkgfile-update.timer
 
+sudo systemctl enable --now avahi-daemon.service avahi-dnsconfd.service
+
 * Catppuccin grub
 
 cd repos && git clone https://github.com/catppuccin/grub.git && cd grub
