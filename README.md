@@ -29,8 +29,8 @@ systemctl --user enable syncthing.service
 sudo systemctl enable reflector.timer
 sudo systemctl enable reflector.service
 sudo systemctl enable pkgfile-update.timer
-
-sudo systemctl enable --now avahi-daemon.service avahi-dnsconfd.service
+sudo systemctl enable bluetooth.service
+sudo systemctl enable avahi-daemon.service avahi-dnsconfd.service
 
 * Catppuccin grub
 
