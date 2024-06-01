@@ -194,6 +194,7 @@
         "polkit-kde-agent",
 		"pkgfile",
         "python-pip",
+		"python-pipx",
         "qt5-wayland",
         "qt6-wayland",
         "ranger",
