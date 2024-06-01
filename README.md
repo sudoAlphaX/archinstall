@@ -50,3 +50,8 @@ _Disable quiet and splash while at it_
 Regenerate grub
 chsh
 
+* Install caskaydia cove nerd font and rofi custom fonts
+
+mkdir -p ~/.local/share/fonts
+cp ~/.dotfiles/.config/rofi/assets/rofi-git/fonts/* ~/.local/share/fonts/
+
