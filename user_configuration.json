@@ -192,6 +192,7 @@
         "papirus-icon-theme",
         "pavucontrol",
         "polkit-kde-agent",
+		"pkgfile",
         "python-pip",
         "qt5-wayland",
         "qt6-wayland",
