@@ -168,6 +168,7 @@
         "grub",
         "htop",
         "imagemagick",
+		"inetutils",
         "intel-gpu-tools",
         "intel-media-driver",
         "intel-media-sdk",
