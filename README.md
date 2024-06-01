@@ -48,7 +48,10 @@ GRUB_THEME="/boot/grub/themes/catppuccin-mocha-grub-theme/theme.txt"
 _Disable quiet and splash while at it_
 
 Regenerate grub
+
 chsh
+
+* import pgp keys
 
 * Install caskaydia cove nerd font and rofi custom fonts
 
@@ -56,3 +59,5 @@ mkdir -p ~/.local/share/fonts
 cp ~/.dotfiles/.config/rofi/assets/rofi-git/fonts/* ~/.local/share/fonts/
 
 pipx install yt-dlp hanimetv tldr virtualenvwrapper
+
+* Setup KDE-Connect
