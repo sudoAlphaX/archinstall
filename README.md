@@ -48,3 +48,5 @@ GRUB_THEME="/boot/grub/themes/catppuccin-mocha-grub-theme/theme.txt"
 _Disable quiet and splash while at it_
 
 Regenerate grub
+chsh
+
