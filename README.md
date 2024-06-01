@@ -15,7 +15,7 @@ hyprpm update
 
 paru -S catppuccin-gtk-theme-mocha papirus-folders-catppuccin-git
 papirus-folders -C cat-mocha-mauve
-gsettings set org.gnome.desktop.interface gtk-theme "catppuccin-mocha-mauve-standard+default-dark" && gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+gsettings set org.gnome.desktop.interface gtk-theme "catppuccin-mocha-mauve-standard+default-dark" && gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark' && gsettings set org.gnome.desktop.interface icon-theme Papirus
 
 * Setup fancontrol
 sudo systemctl --enable fancontrol.service
