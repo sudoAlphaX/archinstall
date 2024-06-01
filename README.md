@@ -55,3 +55,4 @@ chsh
 mkdir -p ~/.local/share/fonts
 cp ~/.dotfiles/.config/rofi/assets/rofi-git/fonts/* ~/.local/share/fonts/
 
+pipx install yt-dlp hanimetv tldr virtualenvwrapper
