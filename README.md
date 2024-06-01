@@ -46,6 +46,10 @@ chsh
 * import pgp keys
 
 * Install caskaydia cove nerd font and rofi custom fonts
+https://www.nerdfonts.com/font-downloads
+
+* Download Pacifico font
+https://github.com/googlefonts/Pacifico/raw/main/fonts/ttf/Pacifico-Regular.ttf
 
 mkdir -p ~/.local/share/fonts
 cp ~/.dotfiles/.config/rofi/assets/rofi-git/fonts/* ~/.local/share/fonts/
