@@ -29,3 +29,20 @@ systemctl --user enable syncthing.service
 sudo systemctl enable reflector.timer
 sudo systemctl enable reflector.service
 sudo systemctl enable pkgfile-update.timer
+
+* Catppuccin grub
+
+cd repos && git clone https://github.com/catppuccin/grub.git && cd grub
+sudo cp -r src/* /boot/grub/themes/
+
+- In /etc/default/grub:
+
+GRUB_THEME="/boot/grub/themes/catppuccin-mocha-grub-theme/theme.txt"
+
+- Comment the line:
+
+`GRUB_TERMINAL_OUTPUT="console"`
+
+_Disable quiet and splash while at it_
+
+Regenerate grub
