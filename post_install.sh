@@ -7,12 +7,13 @@ sudo id
 # Clone dotfiles repo
 git clone --recursive https://github.com/sudoAlphaX/dotfiles ~/.dotfiles
 
-# Install paru (AUR Helper)
-sudo pacman -S --needed base-devel && mkdir ~/repos && cd ~/repos && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si && cd ~
-
 # Setup fancontrol
 sudo cp ~/.dotfiles/assets/configs/etc/fancontrol /etc/
 sudo systemctl enable --now fancontrol.service
+
+# Install paru (AUR Helper)
+mkdir ~/.repos
+sudo pacman -S --needed base-devel && cd ~/repos && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg --noconfirm -si && cd ~
 
 # Install browser
 paru -S --noconfirm --sudoloop librewolf-bin
@@ -29,14 +30,14 @@ wget -o ~/.local/share/fonts/Pacifico-Regular.ttf "https://github.com/googlefont
 cp ~/.dotfiles/.config/rofi/assets/rofi-git/fonts/* ~/.local/share/fonts/
 
 # Install themes
-paru -S catppuccin-gtk-theme-mocha papirus-folders-catppuccin-git
+paru -S --noconfirm --sudoloop catppuccin-gtk-theme-mocha papirus-folders-catppuccin-git
 gsettings set org.gnome.desktop.interface gtk-theme "catppuccin-mocha-mauve-standard+default"
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface icon-theme Papirus
 papirus-folders -C cat-mocha-mauve
 
 # Install Hyprland
-paru -S --noconfirm --sudoloop hyprlang 
+paru -S --noconfirm --sudoloop hyprlang-git
 paru -S --noconfirm --sudoloop hyprland-git hyprpaper-git hyprlock-git hypridle-git hyprcursor-git xdg-desktop-portal-hyprland-git
 
 # Install other packages
