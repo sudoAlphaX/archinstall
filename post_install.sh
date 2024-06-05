@@ -26,7 +26,7 @@ systemctl --user enable mprisence.service
 mkdir -p ~/.local/share/fonts
 paru -S --noconfirm --sudoloop ttf-ms-win11-auto
 wget -q -O- https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/CascadiaCode.tar.xz | tar -Jx -C ~/.local/share/fonts;
-wget -o ~/.local/share/fonts/Pacifico-Regular.ttf "https://github.com/googlefonts/Pacifico/raw/main/fonts/ttf/Pacifico-Regular.ttf"
+wget -P ~/.local/share/fonts/Pacifico-Regular.ttf "https://github.com/googlefonts/Pacifico/raw/main/fonts/ttf/Pacifico-Regular.ttf"
 cp ~/.dotfiles/.config/rofi/assets/rofi-git/fonts/* ~/.local/share/fonts/
 
 # Install themes
