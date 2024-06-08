@@ -4,9 +4,7 @@ Setup AUR helper (Paru)
 
 sudo pacman -S --needed base-devel && mkdir repos && cd repos && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg -si
 
-paru -S librewolf-bin mprisence musikcube spotube-bin
-
-systemctl --user enable mprisence.service syncthing.service
+paru -S librewolf-bin musikcube spotube-bin
 
 paru -S ttf-ms-win11-auto ttf-pacificio
 paru -S hyprlang-git wl-clip-persist

@@ -19,8 +19,7 @@ sudo pacman -S --needed base-devel && cd ~/repos && git clone https://aur.archli
 paru -S --noconfirm --sudoloop librewolf-bin
 
 # Install musicplayers
-paru -S --noconfirm --sudoloop mprisence musikcube spotube-bin
-systemctl --user enable mprisence.service
+paru -S --noconfirm --sudoloop musikcube spotube-bin
 
 # Install fonts
 mkdir -p ~/.local/share/fonts
