@@ -36,7 +36,7 @@ gsettings set org.gnome.desktop.interface icon-theme Papirus
 papirus-folders -C cat-mocha-mauve
 
 # Install Hyprland
-paru -S --noconfirm --sudoloop hyprlang-git
+paru -S --noconfirm --sudoloop hyprlang-git hyprwayland-scanner-git hyprutils-git
 paru -S --noconfirm --sudoloop hyprland-git hyprpaper-git hyprlock-git hypridle-git hyprcursor-git xdg-desktop-portal-hyprland-git
 
 # Install other packages
