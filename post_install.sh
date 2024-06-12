@@ -15,12 +15,6 @@ sudo systemctl enable --now fancontrol.service
 mkdir ~/.repos
 sudo pacman -S --needed base-devel && cd ~/repos && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg --noconfirm -si && cd ~
 
-# Install browser
-paru -S --noconfirm --sudoloop librewolf-bin
-
-# Install musicplayers
-paru -S --noconfirm --sudoloop musikcube spotube-bin
-
 # Install fonts
 mkdir -p ~/.local/share/fonts
 paru -S --noconfirm --sudoloop ttf-ms-win11-auto
@@ -40,14 +34,4 @@ paru -S --noconfirm --sudoloop hyprutils-git
 paru -S --noconfirm --sudoloop hyprlang-git hyprwayland-scanner-git
 paru -S --noconfirm --sudoloop hyprland-git hyprpaper-git hyprlock-git hypridle-git hyprcursor-git xdg-desktop-portal-hyprland-git
 
-# Install other packages
-paru -S --noconfirm --sudoloop auto-cpufreq
-sudo systemctl enable --now auto-cpufreq.service
-sudo systemctl mask power-profiles-daemon.service
-
-# Other tasks
-paru -S --noconfirm --sudoloop wl-clip-persist
-sudo systemctl enable reflector.timer reflector.service pkgfile-update.timer bluetooth.service avahi-daemon.service avahi-dnsconfd.service 
-systemctl enable --user syncthing.service
-cd ~/.dotfiles/assets/utilities/arrpc && npm install && cd ~
-pipx install yt-dlp hanimetv tldr virtualenvwrapper
+printf "\n\nInitialize dotfiles now"
