@@ -2,9 +2,6 @@
 # Install browser
 paru -S --noconfirm --sudoloop librewolf-bin
 
-# Install musicplayers
-paru -S --noconfirm --sudoloop musikcube spotube-bin
-
 # Install other packages
 paru -S --noconfirm --sudoloop auto-cpufreq
 sudo systemctl enable --now auto-cpufreq.service
