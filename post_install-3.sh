@@ -1,5 +1,4 @@
 sudo paru --noconfirm --sudoloop yazi
-sudo paru --noconfirm --sudoloop cpio
 
 sudo paru --noconfirm --sudoloop qemu-full dnsmasq virt-manager
 sudo systemctl enable libvirtd.service

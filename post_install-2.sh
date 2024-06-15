@@ -2,6 +2,13 @@
 # Install browser
 paru -S --noconfirm --sudoloop librewolf-bin
 
+# Hyprland plugins setup
+paru -S --noconfirm --sudoloop cpio
+hyprpm update
+echo y | hyprpm add https://github.com/hyprwm/hyprland-plugins
+hyprpm update
+hyprpm enable hyprexpo
+
 # Install other packages
 paru -S --noconfirm --sudoloop auto-cpufreq
 sudo systemctl enable --now auto-cpufreq.service
