@@ -34,4 +34,4 @@ paru -S --noconfirm --sudoloop hyprutils-git
 paru -S --noconfirm --sudoloop hyprlang-git hyprwayland-scanner-git
 paru -S --noconfirm --sudoloop hyprland-git hyprpaper-git hyprlock-git hypridle-git hyprcursor-git xdg-desktop-portal-hyprland-git
 
-printf "\n\nInitialize dotfiles now"
+printf "\n\nInitialize dotfiles now\n\n"
