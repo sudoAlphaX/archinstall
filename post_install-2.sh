@@ -14,6 +14,8 @@ paru -S --noconfirm --sudoloop auto-cpufreq
 sudo systemctl enable --now auto-cpufreq.service
 sudo systemctl mask power-profiles-daemon.service
 
+paru -S --noconfirm --sudoloop localsend
+
 # Other tasks
 paru -S --noconfirm --sudoloop wl-clip-persist
 sudo systemctl enable reflector.timer reflector.service pkgfile-update.service pkgfile-update.timer bluetooth.service avahi-daemon.service avahi-dnsconfd.service sshd.service
