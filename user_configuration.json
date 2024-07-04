@@ -175,7 +175,7 @@
         "networkmanager",
         "p7zip",
         "pavucontrol",
-        "polkit-kde-agent",
+        "mate-polkit",
 		"pkgfile",
         "python-pip",
 		"python-pipx",
