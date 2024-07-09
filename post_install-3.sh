@@ -6,3 +6,5 @@ paru -S --noconfirm --sudoloop intellij-idea-community-edition kotlin gradle jdk
 
 # Install musicplayers
 paru -S --noconfirm --sudoloop musikcube spotube
+
+paru -S ventoy
