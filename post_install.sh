@@ -18,7 +18,7 @@ sudo pacman -S --needed base-devel && cd ~/repos && git clone https://aur.archli
 # Install fonts
 mkdir -p ~/.local/share/fonts
 paru -S --noconfirm --sudoloop ttf-ms-win11-auto
-wget -q -O- https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/CascadiaCode.tar.xz | tar -Jx -C ~/.local/share/fonts;
+wget -q -O- https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/CascadiaCode.tar.xz | tar -Jx -C ~/.local/share/fonts
 wget -P ~/.local/share/fonts/Pacifico-Regular.ttf "https://github.com/googlefonts/Pacifico/raw/main/fonts/ttf/Pacifico-Regular.ttf"
 cp ~/.dotfiles/.config/rofi/assets/rofi-git/fonts/* ~/.local/share/fonts/
 
@@ -28,6 +28,11 @@ gsettings set org.gnome.desktop.interface gtk-theme "catppuccin-mocha-mauve-stan
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface icon-theme Papirus
 papirus-folders -C cat-mocha-mauve
+
+# Setup Hyprcursor
+paru -S --noconfirm --sudoloop bibata-cursor-git
+gsettings set org.gnome.desktop.interface cursor-size 22
+gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'
 
 # Install Hyprland
 paru -S --noconfirm --sudoloop hyprutils-git
