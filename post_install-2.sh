@@ -1,4 +1,3 @@
-
 # Install browser
 paru -S --noconfirm --sudoloop librewolf-bin
 
@@ -15,6 +14,10 @@ sudo systemctl enable --now auto-cpufreq.service
 sudo systemctl mask power-profiles-daemon.service
 
 paru -S --noconfirm --sudoloop localsend
+
+# Setup caps2esc
+paru -S --noconfirm --sudoloop interception-tools interception-caps2esc
+sudo systemctl enable udevmon.service
 
 # Other tasks
 paru -S --noconfirm --sudoloop wl-clip-persist
