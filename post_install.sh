@@ -31,7 +31,7 @@ papirus-folders -C cat-mocha-mauve
 
 # Setup Hyprcursor
 paru -S --noconfirm --sudoloop bibata-cursor-git
-gsettings set org.gnome.desktop.interface cursor-size 22
+gsettings set org.gnome.desktop.interface cursor-size 24
 gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'
 
 # Install Hyprland
