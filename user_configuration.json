@@ -94,6 +94,7 @@
     "wireless_tools",
     "wpa_supplicant"
   ],
+  "parallel downloads": 5,
   "parallel_downloads": 5,
   "profile_config": {
     "gfx_driver": null,
