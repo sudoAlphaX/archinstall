@@ -7,8 +7,8 @@
   "bootloader": "Grub",
   "config_version": "2.8.0",
   "debug": false,
-  "hostname": "devbox",
   "disk_config": null,
+  "hostname": "devserver",
   "kernels": [
     "linux",
     "linux-lts",
