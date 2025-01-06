@@ -4,22 +4,37 @@
 chsh -s /usr/bin/zsh alpha
 sudo id
 
+# Install all needed packages
+xargs sudo pacman -S --noconfirm <./packages.txt
+
 # Clone dotfiles repo
 git clone --recursive https://github.com/sudoAlphaX/dotfiles ~/.dotfiles
 
 # Setup fancontrol
-sudo cp ~/.dotfiles/assets/configs/etc/fancontrol /etc/
+sudo cp -v ~/.dotfiles/assets/configs/etc/fancontrol /etc/
 sudo systemctl enable --now fancontrol.service
 
 # Install paru (AUR Helper)
-mkdir ~/.repos
-sudo pacman -S --needed base-devel && cd ~/repos && git clone https://aur.archlinux.org/paru.git && cd paru && makepkg --noconfirm -si && cd ~
+sudo pacman -S --needed base-devel
+mkdir -v ~/.repos
+cd ~/repos || (
+  echo -e "Failed to cd into ~/repos"
+  exit 1
+)
+git clone https://aur.archlinux.org/paru.git
+cd paru || (
+  echo -e "Failed to cd into paru"
+  exit 1
+)
+makepkg --noconfirm -si
+cd ~ || (
+  echo -e "Failed to cd into ~"
+  exit 1
+)
 
 # Install fonts
 mkdir -p ~/.local/share/fonts
 paru -S --noconfirm --sudoloop ttf-ms-win11-auto
-wget -q -O- https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/CascadiaCode.tar.xz | tar -Jx -C ~/.local/share/fonts
-wget -P ~/.local/share/fonts/Pacifico-Regular.ttf "https://github.com/googlefonts/Pacifico/raw/main/fonts/ttf/Pacifico-Regular.ttf"
 cp ~/.dotfiles/.config/rofi/assets/rofi-git/fonts/* ~/.local/share/fonts/
 
 # Install themes
@@ -27,16 +42,83 @@ paru -S --noconfirm --sudoloop catppuccin-gtk-theme-mocha papirus-folders-catppu
 gsettings set org.gnome.desktop.interface gtk-theme "catppuccin-mocha-mauve-standard+default"
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 gsettings set org.gnome.desktop.interface icon-theme Papirus
-papirus-folders -C cat-mocha-mauve
+sudo papirus-folders -C cat-mocha-mauve
 
 # Setup Hyprcursor
 paru -S --noconfirm --sudoloop bibata-cursor-git
 gsettings set org.gnome.desktop.interface cursor-size 24
 gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'
 
-# Install Hyprland
-paru -S --noconfirm --sudoloop hyprutils-git
-paru -S --noconfirm --sudoloop hyprlang-git hyprwayland-scanner-git
-paru -S --noconfirm --sudoloop hyprland-git hyprpaper-git hyprlock-git hypridle-git hyprcursor-git xdg-desktop-portal-hyprland-git
+# Install Hyprland (-git)
+# paru -S --noconfirm --sudoloop hyprutils-git
+# paru -S --noconfirm --sudoloop hyprlang-git hyprwayland-scanner-git
+# paru -S --noconfirm --sudoloop hyprland-git hyprpaper-git hyprlock-git hypridle-git hyprcursor-git xdg-desktop-portal-hyprland-git
 
-printf "\n\nInitialize dotfiles now\n\n"
+printf "Initializing dotfiles now"
+
+mkdir -v -p ~/.config
+touch ~/.config/tmp
+
+mkdir -v -p ~/.local/bin/
+touch ~/.local/bin/tmp
+
+mkdir -v -p ~/Pictures/
+mkdir -v -p ~/Pictures/Screenshots/
+touch ~/Pictures/tmp
+mkdir -v -p ~/Videos/wf-recorder/
+
+mkdir -v -p ~/WIP/
+mkdir -v -p ~/repos/
+
+cd ~/.dotfiles || (
+  echo -e "Failed to cd into ~/.dotfiles"
+  exit 1
+)
+stow -v .
+cd ~ || (
+  echo -e "Failed to cd into ~"
+  exit 1
+)
+
+# Setup snapper
+sudo snapper -c root create-config /
+sudo snapper -c "$(whoami)" create-config ~/.
+sudo systemctl enable snapper-backup.timer snapper-timeline.timer snapper-cleanup.timer snapper-boot.timer
+
+# Copy /etc /usr configs
+sudo copy ~/.dotfiles/assets/configs/etc/ /etc/
+sudo copy ~/.dotfiles/assets/configs/usr/ /usr/
+
+# Install browser
+paru -S --noconfirm --sudoloop librewolf-bin
+
+# Install auto-cpufreq
+paru -S --noconfirm --sudoloop auto-cpufreq
+sudo systemctl enable --now auto-cpufreq.service
+sudo systemctl mask power-profiles-daemon.service
+
+# Setup caps2esc
+paru -S --noconfirm --sudoloop interception-tools interception-caps2esc
+sudo systemctl enable udevmon.service
+
+# Install clipboard utils
+paru -S --noconfirm --sudoloop wl-clip-persist
+
+# System services
+sudo systemctl enable reflector.timer pkgfile-update.timer bluetooth.service sshd.service
+sudo systemctl start reflector.service
+sudo systemctl start pkgfile-update.service
+
+# Pipx packages
+pipx install hanimetv fastanime senpwai
+
+# Virt-manager setup
+sudo usermod -G libvirt -a "$(whoami)"
+sudo usermod -G libvirt-qemu -a "$(whoami)"
+
+# Ventoy
+paru -S --noconfirm --sudoloop ventoy
+
+# Music players
+paru -S --noconfirm --sudoloop musikcube spotube-bin mprisence
+systemctl --user enable mprisence.service
