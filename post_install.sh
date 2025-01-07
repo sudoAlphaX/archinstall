@@ -53,7 +53,6 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'
 
 # Setup snapper
 sudo snapper -c root create-config /
-sudo snapper -c "$(whoami)" create-config ~/.
 sudo systemctl enable snapper-backup.timer snapper-timeline.timer snapper-cleanup.timer snapper-boot.timer
 
 # Copy /etc /usr configs
@@ -83,13 +82,12 @@ sudo systemctl start pkgfile-update.service
 # Pipx packages
 pipx install hanimetv senpwai
 
-# Virt-manager setup
-sudo usermod -G libvirt -a "$(whoami)"
-sudo usermod -G libvirt-qemu -a "$(whoami)"
-
 # Music players
 paru -S --noconfirm --sudoloop musikcube spotube-bin mprisence
 systemctl --user enable mprisence.service
 
-# Outher aur packages
+# Other aur packages
 paru -S --noconfirm --sudoloop <./aur.txt
+
+# Userwise configs (usermods, etc)
+bash ./userwise.sh
