@@ -12,3 +12,4 @@ sudo usermod -G uhid -a "$(whoami)"
 # Systemd user units
 systemctl --user enable mprisence.service
 systemctl --user enable syncthing.service
+systemctl --user status tpm-fido.service
