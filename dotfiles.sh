@@ -43,3 +43,6 @@ gsettings set org.gnome.desktop.interface icon-theme Papirus
 # Cursor
 gsettings set org.gnome.desktop.interface cursor-size 24
 gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'
+
+# Bat config
+bat cache --build
