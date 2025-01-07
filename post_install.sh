@@ -7,8 +7,7 @@ sudo id
 # Install all needed packages
 xargs sudo pacman -S --noconfirm <./packages.txt
 
-# Clone dotfiles repo
-git clone --recursive https://github.com/sudoAlphaX/dotfiles ~/.dotfiles
+bash ./dotfiles.sh
 
 # Setup fancontrol
 sudo cp -v ~/.dotfiles/assets/configs/etc/fancontrol /etc/
@@ -33,9 +32,7 @@ cd ~ || (
 )
 
 # Install fonts
-mkdir -p ~/.local/share/fonts
 paru -S --noconfirm --sudoloop ttf-ms-win11-auto
-cp ~/.dotfiles/.config/rofi/assets/rofi-git/fonts/* ~/.local/share/fonts/
 
 # Install themes
 paru -S --noconfirm --sudoloop catppuccin-gtk-theme-mocha papirus-folders-catppuccin-git
@@ -53,32 +50,6 @@ gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'
 # paru -S --noconfirm --sudoloop hyprutils-git
 # paru -S --noconfirm --sudoloop hyprlang-git hyprwayland-scanner-git
 # paru -S --noconfirm --sudoloop hyprland-git hyprpaper-git hyprlock-git hypridle-git hyprcursor-git xdg-desktop-portal-hyprland-git
-
-printf "Initializing dotfiles now"
-
-mkdir -v -p ~/.config
-touch ~/.config/tmp
-
-mkdir -v -p ~/.local/bin/
-touch ~/.local/bin/tmp
-
-mkdir -v -p ~/Pictures/
-mkdir -v -p ~/Pictures/Screenshots/
-touch ~/Pictures/tmp
-mkdir -v -p ~/Videos/wf-recorder/
-
-mkdir -v -p ~/WIP/
-mkdir -v -p ~/repos/
-
-cd ~/.dotfiles || (
-  echo -e "Failed to cd into ~/.dotfiles"
-  exit 1
-)
-stow -v .
-cd ~ || (
-  echo -e "Failed to cd into ~"
-  exit 1
-)
 
 # Setup snapper
 sudo snapper -c root create-config /
