@@ -12,6 +12,7 @@ base
 base-devel
 bat
 bluez
+bluez-utils
 brightnessctl
 btop
 btrfs-progs
