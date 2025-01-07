@@ -34,3 +34,12 @@ rm -v ~/Pictures/tmp
 # Install fonts
 mkdir -p ~/.local/share/fonts
 cp ~/.dotfiles/.config/rofi/assets/rofi-git/fonts/* ~/.local/share/fonts/
+
+# Themes
+gsettings set org.gnome.desktop.interface gtk-theme "catppuccin-mocha-mauve-standard+default"
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+gsettings set org.gnome.desktop.interface icon-theme Papirus
+
+# Cursor
+gsettings set org.gnome.desktop.interface cursor-size 24
+gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'

@@ -36,15 +36,10 @@ paru -S --noconfirm --sudoloop ttf-ms-win11-auto
 
 # Install themes
 paru -S --noconfirm --sudoloop catppuccin-gtk-theme-mocha papirus-folders-catppuccin-git
-gsettings set org.gnome.desktop.interface gtk-theme "catppuccin-mocha-mauve-standard+default"
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-gsettings set org.gnome.desktop.interface icon-theme Papirus
 sudo papirus-folders -C cat-mocha-mauve
 
 # Setup Hyprcursor
 paru -S --noconfirm --sudoloop bibata-cursor-git
-gsettings set org.gnome.desktop.interface cursor-size 24
-gsettings set org.gnome.desktop.interface cursor-theme 'Bibata-Modern-Classic'
 
 # Install Hyprland (-git)
 # paru -S --noconfirm --sudoloop hyprutils-git
