@@ -20,6 +20,7 @@ cliphist
 cmake
 cowsay
 deno
+dnsmasq
 dunst
 efibootmgr
 entr

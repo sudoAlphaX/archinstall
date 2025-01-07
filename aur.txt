@@ -22,6 +22,7 @@ systemd-boot-pacman-hook
 topgrade
 tpm-fido-git
 trackma
+ttf-pacifico
 ventoy-bin
 vesktop
 vrms-arch-git
