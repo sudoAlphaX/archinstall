@@ -84,7 +84,6 @@ pipx install hanimetv senpwai
 
 # Music players
 paru -S --noconfirm --sudoloop musikcube spotube-bin mprisence
-systemctl --user enable mprisence.service
 
 # Other aur packages
 paru -S --noconfirm --sudoloop <./aur.txt

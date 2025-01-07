@@ -8,3 +8,7 @@ sudo usermod -G libvirt-qemu -a "$(whoami)"
 # tpm-fido
 sudo usermod -G tss -a "$(whoami)"
 sudo usermod -G uhid -a "$(whoami)"
+
+# Systemd user units
+systemctl --user enable mprisence.service
+systemctl --user enable syncthing.service
