@@ -1,7 +1,3 @@
-# Install fonts
-mkdir -p ~/.local/share/fonts
-cp ~/.dotfiles/.config/rofi/assets/rofi-git/fonts/* ~/.local/share/fonts/
-
 # Clone dotfiles repo
 git clone --recursive https://github.com/sudoAlphaX/dotfiles ~/.dotfiles
 
@@ -34,3 +30,7 @@ cd ~ || (
 rm -v ~/.config/tmp
 rm -v ~/.local/bin/tmp
 rm -v ~/Pictures/tmp
+
+# Install fonts
+mkdir -p ~/.local/share/fonts
+cp ~/.dotfiles/.config/rofi/assets/rofi-git/fonts/* ~/.local/share/fonts/
