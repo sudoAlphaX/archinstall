@@ -98,11 +98,11 @@ sudo systemctl enable --now auto-cpufreq.service
 sudo systemctl mask power-profiles-daemon.service
 
 # Setup caps2esc
-paru -S --noconfirm --sudoloop interception-tools interception-caps2esc
+sudo pacman -S --noconfirm interception-tools interception-caps2esc
 sudo systemctl enable udevmon.service
 
 # Install clipboard utils
-paru -S --noconfirm --sudoloop wl-clip-persist
+sudo pacman -S --noconfirm wl-clip-persist
 
 # System services
 sudo systemctl enable reflector.timer pkgfile-update.timer bluetooth.service sshd.service
@@ -110,15 +110,15 @@ sudo systemctl start reflector.service
 sudo systemctl start pkgfile-update.service
 
 # Pipx packages
-pipx install hanimetv fastanime senpwai
+pipx install hanimetv senpwai
 
 # Virt-manager setup
 sudo usermod -G libvirt -a "$(whoami)"
 sudo usermod -G libvirt-qemu -a "$(whoami)"
 
-# Ventoy
-paru -S --noconfirm --sudoloop ventoy
-
 # Music players
 paru -S --noconfirm --sudoloop musikcube spotube-bin mprisence
 systemctl --user enable mprisence.service
+
+# Outher aur packages
+paru -S --noconfirm --sudoloop <./aur.txt
