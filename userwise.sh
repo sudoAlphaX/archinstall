@@ -1,3 +1,6 @@
+# Pipx packages
+pipx install hanimetv senpwai
+
 # Snapper setup
 sudo snapper -c "$(whoami)" create-config ~/.
 

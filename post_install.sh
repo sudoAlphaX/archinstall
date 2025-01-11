@@ -74,9 +74,6 @@ sudo systemctl enable reflector.timer pkgfile-update.timer bluetooth.service ssh
 sudo systemctl start reflector.service
 sudo systemctl start pkgfile-update.service
 
-# Pipx packages
-pipx install hanimetv senpwai
-
 # Music players
 paru -S --noconfirm --sudoloop musikcube spotube-bin mprisence
 
